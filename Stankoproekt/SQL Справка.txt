@@ -1,0 +1,11 @@
+SELECT 
+    s.employee_id, 
+    s.first_name, 
+    s.last_name, 
+    COUNT(i.incident_id) AS incident_count
+FROM employees s
+JOIN incident_participants ip ON s.employee_id = ip.employee_id
+JOIN incidents i ON ip.incident_id = i.incident_id
+WHERE i.incident_date >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR)
+GROUP BY s.employee_id, s.first_name, s.last_name
+ORDER BY incident_count DESC;
