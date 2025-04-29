@@ -1,0 +1,30 @@
+
+:root {
+    --fire-red: #dc3545;
+    --fire-dark: #c82333;
+}
+
+.table thead th {
+    background-color: var(--fire-red);
+    color: white;
+}
+
+.btn-fire {
+    background-color: var(--fire-red);
+    color: white;
+}
+
+.btn-fire:hover {
+    background-color: var(--fire-dark);
+    color: white;
+}
+
+.card-header {
+    background-color: var(--fire-red);
+    color: white;
+}
+
+.action-buttons .btn {
+    width: 35px;
+    padding: 0.25rem;
+}

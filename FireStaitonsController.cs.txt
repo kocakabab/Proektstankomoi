@@ -1,0 +1,13 @@
+public async Task<IActionResult> Index(string searchString)
+{
+    var stations = from s in _context.FireStaiton
+                   select s;
+
+    if (!string.IsNullOrEmpty(searchString))
+    {
+        stations = stations.Where(s => s.Name.Contains(searchString) 
+                       || s.Model.Contains(searchString));
+    }
+
+    return View(await stations.ToListAsync());
+}

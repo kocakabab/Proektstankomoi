@@ -1,0 +1,14 @@
+public class FireStaiton
+{
+    public int Id { get; set; }
+
+    [Required(ErrorMessage = "Името е задължително!")]
+    [StringLength(100, ErrorMessage = "Името не може да бъде по-дълго от 100 символа.")]
+    [Display(Name = "Име на станцията")]
+    public string Name { get; set; }
+
+    [Required(ErrorMessage = "Моделът е задължителен!")]
+    [StringLength(50, ErrorMessage = "Моделът не може да бъде по-дълъг от 50 символа.")]
+    [Display(Name = "Модел")]
+    public string Model { get; set; }
+}
